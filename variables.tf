@@ -36,7 +36,10 @@ variable "cluster_database_name" {
 variable "cluster_master_username" {}
 
 variable "cluster_master_password" {}
-variable "cluster_port" {}
+
+variable "cluster_port" {
+  default = 5439
+}
 
 # This is for a custom parameter to be passed to the DB
 # We're "cloning" default ones, but we need to specify which should be copied

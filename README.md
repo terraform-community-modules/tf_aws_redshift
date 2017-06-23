@@ -17,7 +17,6 @@ module "redshift" {
   cluster_database_name   = "${var.redshift_cluster_database_name}"
   cluster_master_username = "${var.redshift_cluster_master_username}"
   cluster_master_password = "${var.redshift_cluster_master_password}"
-  cluster_port            = "${var.redshift_cluster_port}"
 
   # Group parameters
   wlm_json_configuration     = "${var.redshift_cluster_wlm_json_configuration}"
