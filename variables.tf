@@ -67,7 +67,7 @@ variable "subnets" {
 
 variable "private_cidr" {
   description = "VPC private addressing, used for a security group"
-  type        = "string"
+  type        = "list"
 }
 
 variable "redshift_vpc_id" {
