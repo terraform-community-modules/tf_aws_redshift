@@ -94,3 +94,7 @@ variable "automated_snapshot_retention_period" {
 variable "wlm_json_configuration" {
   default = "[{\"query_concurrency\": 5}]"
 }
+
+variable "default_tags" {
+  type = "map"
+}
