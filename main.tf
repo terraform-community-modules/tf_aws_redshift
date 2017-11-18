@@ -38,6 +38,8 @@ resource "aws_redshift_cluster" "main_redshift_cluster" {
   lifecycle {
     prevent_destroy = true
   }
+  
+  tags = "${var.default_tags}"
 }
 
 resource "aws_redshift_parameter_group" "main_redshift_cluster" {
@@ -54,6 +56,8 @@ resource "aws_redshift_subnet_group" "main_redshift_subnet_group" {
   name        = "${var.cluster_identifier}-redshift-subnetgrp"
   description = "Redshift subnet group of ${var.cluster_identifier}"
   subnet_ids  = ["${var.subnets}"]
+  
+  tags = "${var.default_tags}"
 }
 
 # Security groups
@@ -61,10 +65,10 @@ resource "aws_security_group" "main_redshift_access" {
   name        = "${var.cluster_identifier}-redshift-access"
   description = "Allow access to the cluster: ${var.cluster_identifier}"
   vpc_id      = "${var.redshift_vpc_id}"
-
-  tags {
-    Name = "${var.cluster_identifier}-redshift-access"
-  }
+  
+  tags = "${merge(var.default_tags, map(
+    "Name", "${var.cluster_identifier}-redshift-access"
+  ))}"
 }
 
 # Keep rules separated to not recreate the cluster when deleting/adding rules
