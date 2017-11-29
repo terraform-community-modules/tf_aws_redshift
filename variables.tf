@@ -98,3 +98,13 @@ variable "wlm_json_configuration" {
 variable "default_tags" {
   type = "map"
 }
+
+variable "encrypted" {
+  description = "(Optional) If true , the data in the cluster is encrypted at rest."
+  default     = false
+}
+
+variable "kms_key_id" {
+  description = "(Optional) The ARN for the KMS encryption key. When specifying kms_key_id, encrypted needs to be set to true."
+  default     = ""
+}

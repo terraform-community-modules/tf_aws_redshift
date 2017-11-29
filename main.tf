@@ -40,6 +40,11 @@ resource "aws_redshift_cluster" "main_redshift_cluster" {
   }
   
   tags = "${var.default_tags}"
+
+  # Encryption
+  encrypted  = "${var.encrypted}"
+  kms_key_id = "${var.kms_key_id}"
+
 }
 
 resource "aws_redshift_parameter_group" "main_redshift_cluster" {
