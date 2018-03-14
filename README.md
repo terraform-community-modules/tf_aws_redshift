@@ -1,5 +1,11 @@
 # tf_aws_redshift
 
+# This module is deprecated and [terraform-aws-modules/terraform-aws-redshift module](https://github.com/terraform-aws-modules/terraform-aws-redshift) published on [the Terraform registry](https://registry.terraform.io/modules/terraform-aws-modules/redshift/aws) should be used instead.
+
+## This repository will not have active support any more.
+
+---
+
 Terraform module which creates a Redshift cluster on AWS
 
 ## Usage
